@@ -1,5 +1,12 @@
 #!/bin/bash
 
+
+if (($# == 0))
+then
+	echo "Enter any argument among:Volumes,CPU,RAM,MAC,All"
+	exit
+fi
+
 #number of volumes, size of each volume , free space on each volume
 echo -e "Filesystems Info:"
 df -H | awk '{print $1 "\t" $2 "\t" $3 "\t" $4}'
