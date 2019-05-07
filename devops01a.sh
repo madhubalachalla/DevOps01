@@ -11,7 +11,6 @@ cat /proc/cpuinfo | awk '/processor/{c=10} c&&c--'
 echo $'\n'
 
 #amount of  ram
-
 echo -e "Memory info"
 cat /proc/meminfo | head -2
 echo $'\n'
