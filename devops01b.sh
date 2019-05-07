@@ -15,7 +15,7 @@ echo -e "Memory info"
 cat /proc/meminfo | head -2
 echo $'\n'
 
-#MAC address and ip address
+##MAC address and ip address
 echo "MAC address:"
 getmac -V -FO CSV | awk -F ',' '{if(match($1,"Ethernet"))print $3;}'
 echo $'\n'
