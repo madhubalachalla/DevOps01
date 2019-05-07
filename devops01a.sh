@@ -7,7 +7,7 @@ echo $'\n'
 
 #number of cpus,information about cpus/core
 echo -e "CPU info"
-cat /proc/cpuinfo | head 
+cat /proc/cpuinfo | awk '/processor/{c=10} c&&c--'
 echo $'\n'
 
 #amount of ram
@@ -19,3 +19,5 @@ echo $'\n'
 echo "MAC address:"
 getmac -V -FO CSV | awk -F ',' '{if(match($1,"Ethernet"))print $3;}'
 echo $'\n'
+echo "IP address"
+ipconfig | awk 'c&&!--c;/Wi-Fi/{c=4}'
