@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 #number of volumes, size of each volume , free space on each volume
 echo -e "Filesystems Info:"
 df -H | awk '{print $1 "\t" $2 "\t" $3 "\t" $4}'
